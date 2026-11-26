@@ -1,457 +1,344 @@
 <!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Anteprima home Asolo Arte</title></head><body style="margin:0">
 <!-- ============================================================
-     HOME asoloarte.com -- versione 2 "Asolo Arte al centro" (26/11/2026)
-     Anteprima per Elisa. NON ancora sul sito: la home attuale resta, con la fascia
-     "Evento concluso" (luce/landing/fascia-concluso-asoloarte.html).
+     HOME asoloarte.com -- versione 3 (26/11/2026), anteprima per Elisa.
+     NON ancora sul sito: oggi la home attuale ha solo la fascia "Evento concluso".
      Da incollare in UN widget HTML di Elementor (footer compreso).
      Sezione Elementor: larghezza piena, nessun padding, nessuna altezza minima.
-     Testi: solo fatti gia' pubblicati su asoloarte.com e /luce/. Le parti segnate
-     "DA INTERVISTA" vanno arricchite dopo l'intervista a Elisa.
+     Testi: solo fatti gia' pubblicati su asoloarte.com e /luce/. Foto e loghi: gia' caricati sul sito.
+     Dopo l'intervista: aggiungere le parole di Elisa (blocco "aa-elisa") e foto vere delle due serate.
      ============================================================ -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 .aa-home, .aa-home *, .aa-home *::before, .aa-home *::after { box-sizing:border-box; margin:0; padding:0; }
 .aa-home {
-  --bg:#FAF7F0; --surface:#F0E8D4; --paper:#FFFEFB;
-  --gold:#C4973A; --gold-lt:#E8C96A; --gold-dk:#8B6520; --terra:#9B4A2E;
-  --deep:#1A1510; --text:#2C2418; --mute:#7A6E60; --line:rgba(196,151,58,.25);
+  --bg:#FAF7F0; --surface:#F1EADB; --paper:#FFFEFB;
+  --gold:#B8892F; --gold-lt:#E3C470; --gold-dk:#7E5A1C;
+  --deep:#1A1510; --text:#2C2418; --mute:#766A5C; --line:#E3D8C2;
   font-family:'Inter',system-ui,sans-serif; font-size:clamp(16px,1vw + 9px,18px);
   line-height:1.7; color:var(--text); background:var(--bg); width:100%; overflow-x:hidden;
 }
 .aa-home a { color:inherit; }
-.aa-home img { max-width:100%; }
-.aa-wrap { max-width:1140px; margin:0 auto; padding:0 clamp(16px,5vw,48px); }
-.aa-narrow { max-width:760px; margin:0 auto; }
-.aa-eyebrow { font-size:12px; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+.aa-home img { max-width:100%; display:block; }
+.aa-wrap { max-width:1160px; margin:0 auto; padding:0 clamp(16px,5vw,48px); }
+.aa-serif { font-family:'Cormorant Garamond',Georgia,serif; }
+.aa-label { font-size:12px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--gold-dk); }
 .aa-h2 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; color:var(--deep);
-  font-size:clamp(32px,3.8vw,52px); line-height:1.12; margin:12px 0 20px; }
-.aa-h2 em, .aa-h3 em { color:var(--gold-dk); font-style:italic; }
-.aa-h3 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; color:var(--deep);
-  font-size:clamp(23px,2.2vw,29px); line-height:1.2; margin:8px 0 10px; }
-.aa-rule { width:44px; height:1px; background:var(--gold); margin:0 0 26px; }
-.aa-center { text-align:center; }
-.aa-center .aa-rule { margin-left:auto; margin-right:auto; }
-.aa-sec { padding:clamp(70px,9vw,120px) 0; }
-.aa-intro { font-size:clamp(17px,1.35vw,20px); color:var(--text); }
-.aa-mute { color:var(--mute); }
+  font-size:clamp(34px,4vw,54px); line-height:1.08; letter-spacing:-.01em; }
+.aa-sec { padding:clamp(72px,9vw,128px) 0; }
+.aa-btn { display:inline-block; text-decoration:none; font-size:14px; font-weight:600; letter-spacing:.06em;
+  border-radius:3px; padding:15px 28px; text-align:center; transition:background .2s, color .2s; }
+.aa-btn--gold { background:var(--gold-lt); color:var(--deep) !important; }
+.aa-btn--gold:hover { background:#F0D58A; }
+.aa-link { color:var(--gold-dk); font-weight:600; text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:1px; }
+.aa-link:hover { color:var(--deep); }
 
-/* Comparsa morbida allo scorrimento (se JS manca, tutto resta visibile) */
-.aa-js .aa-rv { opacity:0; transform:translateY(22px); transition:opacity .8s ease, transform .8s cubic-bezier(.16,1,.3,1); }
-.aa-js .aa-rv.in { opacity:1; transform:none; }
+/* HERO */
+.aa-hero { position:relative; min-height:min(90vh,820px); display:flex; align-items:flex-end; overflow:hidden; background:var(--deep); }
+.aa-hero > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 40%; }
+.aa-hero::after { content:''; position:absolute; inset:0;
+  background:linear-gradient(to bottom, rgba(12,9,6,.25) 0%, rgba(12,9,6,.45) 45%, rgba(12,9,6,.92) 100%); }
+.aa-hero__in { position:relative; z-index:2; width:100%; padding-bottom:clamp(48px,7vw,88px); color:var(--paper); }
+.aa-hero__top { display:flex; align-items:center; gap:14px; margin-bottom:clamp(28px,4vw,44px); }
+.aa-hero__top img { height:52px; width:auto; border-radius:4px; }
+.aa-hero__top span { font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:rgba(250,247,240,.8); }
+.aa-hero h1 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:500; font-size:clamp(40px,6vw,82px);
+  line-height:1.02; letter-spacing:-.015em; max-width:900px; }
+.aa-hero p { max-width:600px; margin:22px 0 30px; font-size:clamp(17px,1.35vw,19px); color:rgba(250,247,240,.86); }
+.aa-hero__row { display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+.aa-hero__row a.aa-link { color:var(--gold-lt); border-color:rgba(227,196,112,.6); }
 
-/* Bottoni */
-.aa-btn { display:inline-block; text-decoration:none; font-size:14px; font-weight:700; letter-spacing:.1em;
-  text-transform:uppercase; border-radius:40px; padding:16px 34px; text-align:center;
-  transition:transform .25s, box-shadow .25s, background .25s, color .25s; }
-.aa-btn--gold { background:linear-gradient(135deg,var(--gold-lt),var(--gold)); color:var(--deep) !important; }
-.aa-btn--gold:hover { transform:translateY(-2px); box-shadow:0 10px 28px rgba(196,151,58,.38); }
-.aa-btn--ghost { border:2px solid rgba(232,201,106,.7); color:var(--gold-lt) !important; }
-.aa-btn--ghost:hover { background:rgba(232,201,106,.12); }
-.aa-btn--line { border:2px solid var(--gold); color:var(--gold-dk) !important; }
-.aa-btn--line:hover { background:var(--gold); color:var(--paper) !important; }
+/* CHI SIAMO */
+.aa-who { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.25fr); gap:clamp(36px,6vw,96px); align-items:start; }
+.aa-who__img { position:relative; }
+.aa-who__img img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:2px; }
+.aa-who__img figcaption { margin-top:12px; font-size:14px; color:var(--mute); }
+.aa-who__img figcaption b { color:var(--deep); font-weight:600; }
+.aa-who h2 { margin:14px 0 26px; }
+.aa-who p { margin-bottom:18px; }
+.aa-who p.aa-lead { font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(22px,2vw,27px); line-height:1.4; color:var(--deep); }
+.aa-facts { list-style:none; margin-top:30px; border-top:1px solid var(--line); }
+.aa-facts li { display:grid; grid-template-columns:140px 1fr; gap:16px; padding:14px 0; border-bottom:1px solid var(--line); font-size:15.5px; }
+.aa-facts li b { font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-dk); padding-top:3px; }
+@media(max-width:860px){ .aa-who { grid-template-columns:1fr; } .aa-who__img { max-width:420px; } }
+@media(max-width:520px){ .aa-facts li { grid-template-columns:1fr; gap:2px; } }
 
-/* 1. HERO */
-.aa-hero { position:relative; min-height:min(92vh,860px); display:flex; align-items:center; overflow:hidden; background:var(--deep); }
-.aa-hero__bg { position:absolute; inset:0; }
-.aa-hero__bg img { width:100%; height:100%; object-fit:cover; object-position:center 35%; animation:aaZoom 18s ease-out both; }
-@keyframes aaZoom { from { transform:scale(1.08); } to { transform:scale(1); } }
-.aa-hero__bg::after { content:''; position:absolute; inset:0;
-  background:radial-gradient(ellipse at 50% 45%, rgba(10,8,5,.45) 0%, rgba(10,8,5,.78) 75%),
-             linear-gradient(to bottom, rgba(10,8,5,.35), rgba(10,8,5,.85)); }
-.aa-hero__in { position:relative; z-index:2; width:100%; text-align:center; padding:110px 0 90px; }
-.aa-hero__logo { height:68px; width:auto; border-radius:6px; margin:0 auto 26px; display:block; }
-.aa-hero h1 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; color:var(--paper);
-  font-size:clamp(40px,6.4vw,84px); line-height:1.05; margin:16px auto 24px; max-width:920px; }
-.aa-hero h1 em { color:var(--gold-lt); font-style:italic; }
-.aa-hero .aa-lead { color:rgba(250,247,240,.88); max-width:660px; margin:0 auto 38px; font-size:clamp(17px,1.4vw,20px); }
-.aa-ctas { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-.aa-hero__scroll { position:absolute; bottom:26px; left:50%; transform:translateX(-50%); z-index:2;
-  font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:rgba(250,247,240,.55); text-decoration:none; }
+/* EVENTI */
+.aa-events { background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.aa-events__head { display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap; margin-bottom:clamp(40px,5vw,64px); }
+.aa-events__head p { max-width:440px; color:var(--mute); font-size:16px; }
+.aa-ev { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:clamp(28px,4.5vw,64px); align-items:center; }
+.aa-ev + .aa-ev { margin-top:clamp(56px,7vw,96px); padding-top:clamp(56px,7vw,96px); border-top:1px solid var(--line); }
+.aa-ev--flip .aa-ev__media { order:2; }
+.aa-ev__media { position:relative; }
+.aa-ev__media img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:2px; }
+.aa-ev__video { position:relative; aspect-ratio:16/9; background:var(--deep); }
+.aa-ev__video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+.aa-ev__date { font-family:'Cormorant Garamond',Georgia,serif; font-size:20px; color:var(--gold-dk); font-style:italic; }
+.aa-ev h3 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; color:var(--deep);
+  font-size:clamp(28px,2.8vw,38px); line-height:1.12; margin:8px 0 6px; }
+.aa-ev h3 small { display:block; font-size:.6em; font-weight:500; font-style:italic; color:var(--text); margin-top:6px; }
+.aa-ev__where { font-size:14.5px; color:var(--mute); margin-bottom:18px; }
+.aa-ev p { font-size:16px; margin-bottom:14px; }
+.aa-ev__num { display:flex; gap:28px; margin:22px 0 24px; padding:16px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.aa-ev__num div { font-size:13.5px; color:var(--mute); line-height:1.35; }
+.aa-ev__num b { display:block; font-family:'Cormorant Garamond',Georgia,serif; font-size:36px; font-weight:600; color:var(--deep); line-height:1.05; }
+.aa-ev__links { display:flex; gap:22px; flex-wrap:wrap; font-size:15px; }
+@media(max-width:860px){ .aa-ev { grid-template-columns:1fr; } .aa-ev--flip .aa-ev__media { order:0; } }
 
-/* 2. FASCIA GRAZIE */
-.aa-thanks { background:linear-gradient(140deg,#2C2010 0%,#1A1510 100%); border-top:1px solid rgba(196,151,58,.35);
-  border-bottom:1px solid rgba(196,151,58,.35); color:var(--paper); padding:26px 0; }
-.aa-thanks__in { display:flex; align-items:center; justify-content:space-between; gap:18px 30px; flex-wrap:wrap; }
-.aa-thanks p { font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(19px,1.8vw,24px); line-height:1.35; }
-.aa-thanks p em { color:var(--gold-lt); }
-.aa-thanks a { font-size:13px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-lt);
-  text-decoration:none; border-bottom:1px solid rgba(232,201,106,.5); white-space:nowrap; }
-
-/* 3. STORIA (linea del tempo) */
-.aa-story { display:grid; grid-template-columns:.95fr 1.05fr; gap:clamp(36px,6vw,90px); align-items:start; }
-.aa-steps { list-style:none; position:relative; padding-left:34px; }
-.aa-steps::before { content:''; position:absolute; left:7px; top:8px; bottom:8px; width:1px; background:var(--line); }
-.aa-steps li { position:relative; padding-bottom:30px; }
-.aa-steps li:last-child { padding-bottom:0; }
-.aa-steps li::before { content:''; position:absolute; left:-34px; top:7px; width:15px; height:15px; border-radius:50%;
-  background:var(--bg); border:2px solid var(--gold); }
-.aa-steps li:last-child::before { background:var(--gold); }
-.aa-steps b { display:block; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold-dk); margin-bottom:4px; }
-.aa-steps p { font-size:16px; }
-.aa-pres { margin-top:30px; padding:22px 24px; background:var(--paper); border:1px solid var(--line); border-radius:10px; font-size:15.5px; }
-.aa-pres strong { color:var(--deep); }
-@media(max-width:860px){ .aa-story { grid-template-columns:1fr; } }
-
-/* 4. MISSIONE */
-.aa-mission { background:var(--surface); }
-.aa-mission__grid { display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:44px; }
-.aa-mcard { background:var(--paper); border-radius:12px; padding:clamp(28px,3vw,42px); border:1px solid var(--line); position:relative; overflow:hidden; }
-.aa-mcard__n { font-family:'Cormorant Garamond',Georgia,serif; font-size:84px; line-height:1; color:rgba(196,151,58,.18);
-  position:absolute; right:22px; top:10px; font-weight:700; }
-.aa-mcard p { font-size:16px; }
-@media(max-width:760px){ .aa-mission__grid { grid-template-columns:1fr; } }
-
-/* 5. CITAZIONE */
-.aa-quote { background:var(--deep); color:var(--paper); text-align:center; position:relative; overflow:hidden; }
-.aa-quote::before { content:''; position:absolute; inset:0;
-  background:radial-gradient(ellipse at 50% 0%, rgba(196,151,58,.28) 0%, transparent 65%); }
-.aa-quote .aa-wrap { position:relative; }
+/* CITAZIONE */
+.aa-quote { padding:clamp(64px,8vw,110px) 0; text-align:center; }
 .aa-quote blockquote { font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; font-weight:500;
-  font-size:clamp(30px,4.2vw,58px); line-height:1.18; max-width:980px; margin:0 auto 26px; }
-.aa-quote blockquote::before { content:'\201C'; display:block; font-size:1.6em; line-height:.6; color:var(--gold); margin-bottom:18px; }
-.aa-quote cite { font-style:normal; font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-lt); }
-.aa-quote small { display:block; margin-top:8px; font-size:13px; color:rgba(250,247,240,.55); }
+  font-size:clamp(28px,3.6vw,48px); line-height:1.2; color:var(--deep); max-width:900px; margin:0 auto 18px; }
+.aa-quote cite { font-style:normal; font-size:14px; color:var(--mute); }
 
-/* 6. COSA FACCIAMO */
-.aa-acts { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:46px; }
-.aa-act { background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:30px 28px; transition:transform .3s, box-shadow .3s; }
-.aa-act:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(26,21,16,.08); }
-.aa-act__ic { width:46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-  background:rgba(196,151,58,.12); color:var(--gold-dk); margin-bottom:16px; }
-.aa-act p { font-size:15.5px; }
-.aa-act--wide { grid-column:span 2; background:linear-gradient(140deg,#2C2010,#1A1510); color:var(--paper); border:0; }
-.aa-act--wide .aa-h3 { color:var(--paper); }
-.aa-act--wide .aa-h3 em { color:var(--gold-lt); }
-.aa-act--wide .aa-act__ic { background:rgba(232,201,106,.16); color:var(--gold-lt); }
-.aa-act--wide p { color:rgba(250,247,240,.82); }
-@media(max-width:900px){ .aa-acts { grid-template-columns:1fr 1fr; } }
-@media(max-width:620px){ .aa-acts { grid-template-columns:1fr; } .aa-act--wide { grid-column:auto; } }
+/* RELATORI */
+.aa-people-sec { background:var(--deep); color:var(--paper); }
+.aa-people-sec .aa-h2 { color:var(--paper); margin:14px 0 12px; }
+.aa-people-sec .aa-label { color:var(--gold-lt); }
+.aa-people-sec > .aa-wrap > p { color:rgba(250,247,240,.7); max-width:620px; font-size:16px; }
+.aa-people { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(18px,2.4vw,30px); margin-top:clamp(36px,5vw,56px); }
+.aa-p img { width:100%; aspect-ratio:1/1; object-fit:cover; filter:grayscale(1) contrast(1.05); border-radius:2px; transition:filter .4s; }
+.aa-p:hover img { filter:grayscale(0); }
+.aa-p h4 { font-family:'Cormorant Garamond',Georgia,serif; font-size:23px; font-weight:600; margin-top:14px; line-height:1.15; }
+.aa-p p { font-size:14px; color:rgba(250,247,240,.72); margin-top:4px; line-height:1.5; }
+.aa-p span { display:block; margin-top:6px; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-lt); }
+.aa-guests { margin-top:clamp(40px,5vw,60px); padding-top:26px; border-top:1px solid rgba(227,196,112,.25);
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; font-size:15px; color:rgba(250,247,240,.78); }
+.aa-guests b { display:block; font-family:'Cormorant Garamond',Georgia,serif; font-size:21px; font-weight:600; color:var(--paper); }
+@media(max-width:900px){ .aa-people { grid-template-columns:repeat(2,minmax(0,1fr)); } .aa-guests { grid-template-columns:1fr; } }
 
-/* 7. NUMERI */
-.aa-nums { background:var(--surface); }
-.aa-nums__grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center; }
-.aa-num b { display:block; font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(46px,5.4vw,70px); font-weight:600; color:var(--gold-dk); line-height:1; }
-.aa-num span { display:block; margin-top:10px; font-size:14px; color:var(--mute); }
-@media(max-width:820px){ .aa-nums__grid { grid-template-columns:repeat(2,1fr); gap:34px 16px; } }
+/* LOGHI */
+.aa-logos-sec h2 { margin:14px 0 8px; }
+.aa-logos-sec > .aa-wrap > p { color:var(--mute); font-size:16px; max-width:640px; }
+.aa-lg { margin-top:40px; }
+.aa-lg h3 { font-size:12px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--mute);
+  padding-bottom:12px; border-bottom:1px solid var(--line); margin-bottom:20px; }
+.aa-logos { display:grid; grid-template-columns:repeat(auto-fill,minmax(96px,1fr)); gap:12px; }
+.aa-logos img { width:100%; aspect-ratio:1/1; object-fit:contain; background:#fff; border:1px solid var(--line); border-radius:2px; padding:12px; }
 
-/* 8. EVENTI */
-.aa-ev { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:44px; }
-.aa-card { background:var(--paper); border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; }
-.aa-card__media { position:relative; aspect-ratio:16/9; background:var(--deep); }
-.aa-card__media img, .aa-card__media iframe { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border:0; }
-.aa-card__tag { position:absolute; top:14px; left:14px; z-index:2; font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
-  background:rgba(26,21,16,.78); color:var(--gold-lt); padding:6px 12px; border-radius:30px; }
-.aa-card__body { padding:28px 28px 32px; display:flex; flex-direction:column; flex:1; }
-.aa-card__date { font-size:12px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
-.aa-card p { font-size:15px; }
-.aa-card__meta { font-size:14px; color:var(--mute); margin-top:10px; }
-.aa-card__links { margin-top:auto; padding-top:22px; display:flex; gap:18px; flex-wrap:wrap; }
-.aa-card__links a { font-size:14px; font-weight:600; color:var(--gold-dk); text-decoration:none; border-bottom:1px solid var(--line); }
-.aa-card__links a:hover { border-color:var(--gold); }
-.aa-yt { margin-top:30px; text-align:center; font-size:15px; color:var(--mute); }
-.aa-yt a { color:var(--gold-dk); font-weight:600; }
-@media(max-width:820px){ .aa-ev { grid-template-columns:1fr; } }
-
-/* 9. RELATORI */
-.aa-people { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:44px; border-top:1px solid var(--line); }
-.aa-person { padding:24px 22px 24px 0; border-bottom:1px solid var(--line); }
-.aa-person h4 { font-family:'Cormorant Garamond',Georgia,serif; font-size:24px; font-weight:600; color:var(--deep); line-height:1.2; }
-.aa-person p { font-size:14.5px; color:var(--text); margin-top:4px; }
-.aa-person span { display:inline-block; margin-top:8px; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); }
-@media(max-width:860px){ .aa-people { grid-template-columns:1fr 1fr; } }
-@media(max-width:560px){ .aa-people { grid-template-columns:1fr; } }
-
-/* 10. ANEB + LOGHI */
-.aa-aneb { display:grid; grid-template-columns:200px 1fr; gap:clamp(24px,4vw,56px); align-items:center;
-  background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:clamp(26px,4vw,48px); }
-.aa-aneb img { width:100%; height:auto; display:block; }
-.aa-aneb p { font-size:16px; }
-@media(max-width:700px){ .aa-aneb { grid-template-columns:1fr; } .aa-aneb img { max-width:160px; margin:0 auto; } }
-.aa-logos { display:flex; flex-wrap:wrap; justify-content:center; gap:18px; margin-top:30px; }
-.aa-logos img { width:110px; height:110px; object-fit:contain; background:#fff; border-radius:10px; padding:8px; border:1px solid var(--line); }
-.aa-logos-cap { text-align:center; font-size:13px; color:var(--mute); margin-top:14px; }
-
-/* 11. AVVISAMI */
-.aa-next { background:linear-gradient(140deg,#1A1510 0%,#2C2010 100%); color:var(--paper); position:relative; overflow:hidden; }
-.aa-next::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 80% 100%, rgba(196,151,58,.25), transparent 60%); }
-.aa-next .aa-wrap { position:relative; }
-.aa-next .aa-h2 { color:var(--paper); }
-.aa-next .aa-h2 em { color:var(--gold-lt); }
-.aa-next p { color:rgba(250,247,240,.84); max-width:620px; margin:0 auto 34px; }
-.aa-next ul { list-style:none; display:flex; justify-content:center; flex-wrap:wrap; gap:10px 26px; margin:-10px auto 34px; font-size:14.5px; color:rgba(250,247,240,.75); }
-.aa-next ul li::before { content:'\2726'; color:var(--gold); margin-right:8px; }
-.aa-next small { display:block; margin-top:18px; font-size:13px; color:rgba(250,247,240,.6); }
+/* AVVISAMI */
+.aa-next { background:var(--surface); }
+.aa-next__in { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:clamp(28px,5vw,80px); align-items:center; }
+.aa-next h2 { margin:14px 0 16px; }
+.aa-next p { font-size:16.5px; }
+.aa-next__box { background:var(--paper); border:1px solid var(--line); padding:clamp(24px,3vw,36px); border-radius:2px; }
+.aa-next__box .aa-btn { width:100%; }
+.aa-next__box small { display:block; margin-top:14px; font-size:13.5px; color:var(--mute); line-height:1.55; }
+@media(max-width:820px){ .aa-next__in { grid-template-columns:1fr; } }
 
 /* FOOTER */
-.aa-foot { background:var(--deep); color:rgba(250,247,240,.72); font-size:14px; padding:48px 0 36px; border-top:1px solid rgba(196,151,58,.2); }
-.aa-foot__grid { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:28px; }
+.aa-foot { background:var(--deep); color:rgba(250,247,240,.72); font-size:14px; padding:52px 0 36px; }
+.aa-foot__grid { display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:28px; }
 .aa-foot strong { color:var(--paper); font-weight:600; display:block; margin-bottom:8px; }
-.aa-foot a { text-decoration:none; border-bottom:1px solid rgba(196,151,58,.35); }
-.aa-foot__legal { margin-top:34px; padding-top:20px; border-top:1px solid rgba(196,151,58,.2); font-size:12px; color:rgba(250,247,240,.5); }
+.aa-foot a { text-decoration:none; border-bottom:1px solid rgba(227,196,112,.35); }
+.aa-foot__legal { margin-top:34px; padding-top:20px; border-top:1px solid rgba(227,196,112,.18); font-size:12px; color:rgba(250,247,240,.5); }
 @media(max-width:820px){ .aa-foot__grid { grid-template-columns:1fr; } }
 </style>
 
 <div class="aa-home">
 
-  <!-- 1. HERO -->
+  <!-- HERO -->
   <section class="aa-hero" aria-label="Asolo Arte">
-    <div class="aa-hero__bg">
-      <img src="https://asoloarte.com/wp-content/uploads/2026/05/Progetto-senza-titolo-83.jpg"
-           alt="Auditorium San Francesco al Prato, Perugia" fetchpriority="high">
-    </div>
+    <img src="https://asoloarte.com/wp-content/uploads/2026/05/Progetto-senza-titolo-83.jpg" alt="Auditorium San Francesco al Prato, Perugia" fetchpriority="high">
     <div class="aa-wrap aa-hero__in">
-      <img class="aa-hero__logo" src="https://asoloarte.com/wp-content/uploads/2025/08/federico-faggin-4.jpg" alt="Asolo Arte">
-      <div class="aa-eyebrow">Associazione Culturale Asolo Arte</div>
-      <h1>Dove la scienza incontra <em>la coscienza</em></h1>
-      <p class="aa-lead">Da Asolo, la citt&agrave; dei cento orizzonti, portiamo in sala chi studia le domande
-        pi&ugrave; profonde del nostro tempo: scienziati, medici, artisti, in dialogo con il pubblico.</p>
-      <div class="aa-ctas">
-        <a class="aa-btn aa-btn--gold" href="#aa-avvisami">Avvisami del prossimo evento</a>
-        <a class="aa-btn aa-btn--ghost" href="#aa-chi-siamo">Chi siamo</a>
+      <div class="aa-hero__top">
+        <img src="https://asoloarte.com/wp-content/uploads/2025/08/federico-faggin-4.jpg" alt="Logo Asolo Arte">
+        <span>Associazione culturale &middot; Asolo</span>
+      </div>
+      <h1>Fisici, medici e musicisti sullo stesso palco, a parlare di coscienza.</h1>
+      <p>Nel 2026 Asolo Arte ha organizzato due incontri: a febbraio alla Fornace di Asolo,
+        a novembre all&rsquo;Auditorium San Francesco al Prato di Perugia. Il prossimo &egrave; in preparazione.</p>
+      <div class="aa-hero__row">
+        <a class="aa-btn aa-btn--gold" href="#aa-avvisami">Avvisami del prossimo incontro</a>
+        <a class="aa-link" href="#aa-incontri">Guarda cosa abbiamo fatto</a>
       </div>
     </div>
-    <a class="aa-hero__scroll" href="#aa-grazie">Scorri &darr;</a>
   </section>
 
-  <!-- 2. FASCIA GRAZIE -->
-  <div class="aa-thanks" id="aa-grazie">
-    <div class="aa-wrap aa-thanks__in">
-      <p>Grazie a chi c&rsquo;era il 20 novembre a Perugia per <em>Inno alla Luce Archetipica</em>, in sala e in streaming.</p>
-      <a href="#aa-eventi">Rivivi gli incontri &rarr;</a>
-    </div>
-  </div>
-
-  <!-- 3. CHI SIAMO / STORIA -->
+  <!-- CHI SIAMO -->
   <section class="aa-sec" id="aa-chi-siamo" aria-label="Chi siamo">
-    <div class="aa-wrap aa-story">
-      <div class="aa-rv">
-        <div class="aa-eyebrow">Chi siamo</div>
-        <h2 class="aa-h2">Una storia nata <em>tra libri e stampe antiche</em></h2>
-        <div class="aa-rule"></div>
-        <p class="aa-intro">Asolo Arte porta avanti una tradizione di famiglia ultra trentennale nell&rsquo;attivit&agrave;
-          bibliografica antica e di pregio. Da quella cura per la memoria &egrave; nata un&rsquo;associazione che oggi
-          promuove la cultura e la apre a un pubblico sempre pi&ugrave; ampio.</p>
-        <div class="aa-pres">
-          L&rsquo;associazione &egrave; presieduta da <strong>Elisa Cannelli</strong>, che ha ideato e organizzato
-          gli incontri del 2026 ad Asolo e a Perugia.
-        </div>
+    <div class="aa-wrap aa-who">
+      <figure class="aa-who__img">
+        <img src="https://asoloarte.com/wp-content/uploads/2025/08/Progetto-senza-titolo-47.jpg" alt="Elisa Cannelli" loading="lazy">
+        <figcaption><b>Elisa Cannelli</b>, presidente di Asolo Arte. Ha ideato e organizzato gli incontri del 2026.</figcaption>
+      </figure>
+      <div>
+        <div class="aa-label">Chi siamo</div>
+        <h2 class="aa-h2">Tutto &egrave; cominciato da libri e stampe antiche.</h2>
+        <p class="aa-lead">Asolo Arte nasce da una tradizione di famiglia di oltre trent&rsquo;anni
+          nell&rsquo;antiquariato bibliografico.</p>
+        <p>Da quel lavoro sulla grafica antica &egrave; nata un&rsquo;associazione con sede ad Asolo, la citt&agrave;
+          dei cento orizzonti. Ha due compiti: custodire la memoria storica e artistica, con la ricerca e il racconto,
+          e rendere l&rsquo;arte e il pensiero di oggi accessibili a tutti, non solo a chi li frequenta gi&agrave;.</p>
+        <p>Per questo organizza mostre, concerti, laboratori didattici, eventi legati al territorio e conferenze
+          in cui scienza e spiritualit&agrave; si parlano.</p>
+        <ul class="aa-facts">
+          <li><b>Sede</b><span>Via Guglielmo Marconi 117, Asolo (TV)</span></li>
+          <li><b>Presidente</b><span>Elisa Cannelli</span></li>
+          <li><b>Partner scientifico</b><span>Istituto ANEB, Scuola di Specializzazione in Psicoterapia, Milano</span></li>
+          <li><b>Registrazioni</b><span><a class="aa-link" href="https://www.youtube.com/@asoloarte" target="_blank" rel="noopener">canale YouTube @asoloarte</a></span></li>
+        </ul>
       </div>
-      <ol class="aa-steps aa-rv">
-        <li><b>Le radici</b><p>Stampe e libri antichi: una tradizione di famiglia che dura da oltre trent&rsquo;anni.</p></li>
-        <li><b>L&rsquo;associazione</b><p>Ad Asolo, la valorizzazione della grafica antica e la sua divulgazione artistica.
-          Eventi culturali legati all&rsquo;arte, alla cultura e al territorio.</p></li>
-        <li><b>Oggi</b><p>Grandi incontri tra scienza, coscienza e spiritualit&agrave;: la Fornace di Asolo a febbraio,
-          l&rsquo;Auditorium San Francesco al Prato di Perugia a novembre 2026.</p></li>
-      </ol>
     </div>
   </section>
 
-  <!-- 4. MISSIONE -->
-  <section class="aa-sec aa-mission" aria-label="La missione">
+  <!-- GLI INCONTRI -->
+  <section class="aa-sec aa-events" id="aa-incontri" aria-label="Gli incontri del 2026">
     <div class="aa-wrap">
-      <div class="aa-center aa-rv">
-        <div class="aa-eyebrow">La missione</div>
-        <h2 class="aa-h2">Una missione <em>doppia</em></h2>
-        <p class="aa-intro aa-narrow">Tenere insieme il passato e il presente: un dialogo continuo tra la memoria e il pensiero di oggi.</p>
-      </div>
-      <div class="aa-mission__grid">
-        <div class="aa-mcard aa-rv">
-          <span class="aa-mcard__n">I</span>
-          <div class="aa-eyebrow">Custodire</div>
-          <h3 class="aa-h3">La memoria <em>storica e artistica</em></h3>
-          <p>Preservare ci&ograve; che il tempo ci ha lasciato, attraverso la ricerca e il racconto.</p>
+      <div class="aa-events__head">
+        <div>
+          <div class="aa-label">Gli incontri del 2026</div>
+          <h2 class="aa-h2" style="margin-top:14px;">Due serate, in sala e in streaming</h2>
         </div>
-        <div class="aa-mcard aa-rv">
-          <span class="aa-mcard__n">II</span>
-          <div class="aa-eyebrow">Stimolare</div>
-          <h3 class="aa-h3">La creativit&agrave; <em>contemporanea</em></h3>
-          <p>Rendere l&rsquo;arte e il pensiero accessibili a un pubblico ampio, non solo agli addetti ai lavori.</p>
-        </div>
+        <p>Ogni incontro mette allo stesso tavolo discipline diverse, con il pubblico che fa domande.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- 5. CITAZIONE (dalla locandina della tavola rotonda del 28/02/2026) -->
-  <section class="aa-sec aa-quote" aria-label="Citazione">
-    <div class="aa-wrap aa-rv">
-      <blockquote>La vera innovazione nasce quando scienza e spirito si incontrano.</blockquote>
-      <cite>Federico Faggin</cite>
-      <small>Relatore ad Asolo e a Perugia</small>
-    </div>
-  </section>
-
-  <!-- 6. COSA FACCIAMO (DA INTERVISTA: esempi concreti di mostre e laboratori) -->
-  <section class="aa-sec" aria-label="Cosa facciamo">
-    <div class="aa-wrap">
-      <div class="aa-center aa-rv">
-        <div class="aa-eyebrow">Cosa facciamo</div>
-        <h2 class="aa-h2">Cinque modi di <em>fare cultura</em></h2>
-      </div>
-      <div class="aa-acts">
-        <div class="aa-act aa-act--wide aa-rv">
-          <div class="aa-act__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M3 20c.8-3 2.8-5 5-5s4.2 2 5 5M11 20c.8-3 2.8-5 5-5s4.2 2 5 5"/></svg></div>
-          <h3 class="aa-h3">Conferenze <em>socio-scientifiche</em></h3>
-          <p>Tavole rotonde in cui fisici, medici, psicoterapeuti e ricercatori si confrontano sulla coscienza,
-            davanti al pubblico in sala e in streaming. Nel 2026: <em>La Ricerca dell&rsquo;Unit&agrave;</em> ad Asolo
-            e <em>Inno alla Luce Archetipica</em> a Perugia.</p>
+      <article class="aa-ev">
+        <div class="aa-ev__media">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/05/Progetto-senza-titolo-85.jpg" alt="Basilica di San Francesco d'Assisi nella nebbia" loading="lazy">
         </div>
-        <div class="aa-act aa-rv">
-          <div class="aa-act__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></div>
-          <h3 class="aa-h3">Concerti</h3>
-          <p>La musica come parte dell&rsquo;incontro: a Perugia il canto gregoriano del coro Armoniosoincanto,
-            ad Asolo la musica di Davide Ferrario.</p>
-        </div>
-        <div class="aa-act aa-rv">
-          <div class="aa-act__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg></div>
-          <h3 class="aa-h3">Mostre</h3>
-          <p>Dalla tradizione di famiglia: la grafica antica, valorizzata e portata al pubblico.</p>
-        </div>
-        <div class="aa-act aa-rv">
-          <div class="aa-act__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l8 4-8 4-8-4 8-4z"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4"/></svg></div>
-          <h3 class="aa-h3">Eventi culturali</h3>
-          <p>Incontri legati all&rsquo;arte, alla cultura e al territorio, in luoghi che hanno una storia da raccontare.</p>
-        </div>
-        <div class="aa-act aa-rv">
-          <div class="aa-act__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V6a2 2 0 012-2h12v15H6a2 2 0 00-2 2z"/><path d="M8 8h6M8 12h6"/></svg></div>
-          <h3 class="aa-h3">Laboratori didattici</h3>
-          <p>Per rendere l&rsquo;arte accessibile anche a chi non la frequenta ancora.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. NUMERI (Eventbrite e programma di Asolo) -->
-  <section class="aa-sec aa-nums" aria-label="Il 2026 in numeri" style="padding-top:clamp(56px,7vw,90px);padding-bottom:clamp(56px,7vw,90px);">
-    <div class="aa-wrap">
-      <div class="aa-nums__grid aa-rv">
-        <div class="aa-num"><b>30+</b><span>anni di tradizione<br>di famiglia</span></div>
-        <div class="aa-num"><b>300</b><span>posti alla Fornace<br>di Asolo, 28 febbraio</span></div>
-        <div class="aa-num"><b>381</b><span>biglietti a Perugia,<br>20 novembre</span></div>
-        <div class="aa-num"><b>9</b><span>relatori e artisti<br>sul nostro palco nel 2026</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. EVENTI -->
-  <section class="aa-sec" id="aa-eventi" aria-label="I nostri eventi">
-    <div class="aa-wrap">
-      <div class="aa-center aa-rv">
-        <div class="aa-eyebrow">I nostri eventi</div>
-        <h2 class="aa-h2">Rivivi <em>gli incontri</em></h2>
-        <div class="aa-rule"></div>
-      </div>
-      <div class="aa-ev">
-        <article class="aa-card aa-rv">
-          <div class="aa-card__media">
-            <span class="aa-card__tag">Perugia</span>
-            <img src="https://asoloarte.com/wp-content/uploads/2026/05/Progetto-senza-titolo-83.jpg" alt="Auditorium San Francesco al Prato" loading="lazy">
+        <div>
+          <div class="aa-ev__date">20 novembre 2026, Perugia</div>
+          <h3>Inno alla Luce Archetipica<small>Fratello Tutto, nell&rsquo;VIII Centenario di San Francesco</small></h3>
+          <div class="aa-ev__where">Auditorium San Francesco al Prato</div>
+          <p>Federico Faggin, Diego Frigoli e Carlo Ventura, moderati da Alessandra Bracci, dal Cantico delle Creature
+            alla luce della coscienza. Ha aperto la serata il canto gregoriano del coro Armoniosoincanto.</p>
+          <div class="aa-ev__num">
+            <div><b>381</b>biglietti</div>
+            <div><b>512</b>posti in sala</div>
           </div>
-          <div class="aa-card__body">
-            <div class="aa-card__date">20 novembre 2026</div>
-            <h3 class="aa-h3">Fratello Tutto &mdash; <em>Inno alla Luce Archetipica</em></h3>
-            <p>Nell&rsquo;VIII Centenario di San Francesco: Federico Faggin, Diego Frigoli, Carlo Ventura;
-              modera Alessandra Bracci. Coro Armoniosoincanto diretto da Franco Radicchia.</p>
-            <div class="aa-card__meta">Auditorium San Francesco al Prato &middot; in sala e in streaming</div>
-            <div class="aa-card__links">
-              <a href="https://asoloarte.com/luce/">La serata</a>
-              <a href="https://asoloarte.com/wp-content/uploads/2026/06/Programma-2.pdf" target="_blank" rel="noopener">Programma (PDF)</a>
-            </div>
+          <div class="aa-ev__links">
+            <a class="aa-link" href="https://asoloarte.com/luce/">La serata</a>
+            <a class="aa-link" href="https://asoloarte.com/wp-content/uploads/2026/06/Programma-2.pdf" target="_blank" rel="noopener">Programma (PDF)</a>
           </div>
-        </article>
-        <article class="aa-card aa-rv">
-          <div class="aa-card__media">
-            <iframe src="https://www.youtube-nocookie.com/embed/fphK49bFkFQ"
-                    title="Tavola rotonda La Ricerca dell'Unita', Asolo 28 febbraio 2026"
+        </div>
+      </article>
+
+      <article class="aa-ev aa-ev--flip">
+        <div class="aa-ev__media">
+          <div class="aa-ev__video">
+            <iframe src="https://www.youtube-nocookie.com/embed/fphK49bFkFQ" title="Tavola rotonda La Ricerca dell'Unita', Asolo 28 febbraio 2026"
                     loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
           </div>
-          <div class="aa-card__body">
-            <div class="aa-card__date">28 febbraio 2026 &middot; Asolo</div>
-            <h3 class="aa-h3">La Ricerca dell&rsquo;Unit&agrave; &mdash; <em>Il risveglio della coscienza globale</em></h3>
-            <p>Tavola rotonda con Federico Faggin, Diego Frigoli, Attilio Cavezzi, Alessandro Sieni;
-              modera Alessandra Bracci. Ospite Davide Ferrario.</p>
-            <div class="aa-card__meta">Sala Hangar, Fornace di Asolo (1880, territorio MAB UNESCO) &middot; con l&rsquo;Istituto ANEB</div>
-            <div class="aa-card__links">
-              <a href="https://asoloarte.com/la-ricerca-dellunita/">La giornata</a>
-              <a href="https://youtu.be/fphK49bFkFQ" target="_blank" rel="noopener">Registrazione completa</a>
-              <a href="https://asoloarte.com/wp-content/uploads/2026/02/Tavola_rotonda_Asolo_programma_2026.docx_21-2-1.pdf" target="_blank" rel="noopener">Programma (PDF)</a>
-            </div>
-          </div>
-        </article>
-      </div>
-      <p class="aa-yt aa-rv">Le registrazioni sono sul nostro canale <a href="https://www.youtube.com/@asoloarte" target="_blank" rel="noopener">YouTube @asoloarte</a>.</p>
-    </div>
-  </section>
-
-  <!-- 9. RELATORI E ARTISTI (in ordine alfabetico: tutti alla pari) -->
-  <section class="aa-sec" aria-label="Relatori e artisti" style="background:var(--paper);">
-    <div class="aa-wrap">
-      <div class="aa-center aa-rv">
-        <div class="aa-eyebrow">Sul nostro palco</div>
-        <h2 class="aa-h2">Relatori e artisti <em>del 2026</em></h2>
-      </div>
-      <div class="aa-people aa-rv">
-        <div class="aa-person"><h4>Paolo Belardi</h4><p>Professore ordinario di Composizione Architettonica all&rsquo;Universit&agrave; di Perugia.</p><span>Perugia</span></div>
-        <div class="aa-person"><h4>Alessandra Bracci</h4><p>Responsabile area editoriale ANEB, caporedattrice di <em>Materia Prima</em>. Moderatrice.</p><span>Asolo &middot; Perugia</span></div>
-        <div class="aa-person"><h4>Attilio Cavezzi</h4><p>Chirurgo vascolare, autore di studi su flebologia, linfologia e medicina della longevit&agrave;.</p><span>Asolo</span></div>
-        <div class="aa-person"><h4>Federico Faggin</h4><p>Fisico e inventore, padre del microprocessore Intel 4004. Dal 1990 studia la coscienza.</p><span>Asolo &middot; Perugia</span></div>
-        <div class="aa-person"><h4>Davide Ferrario</h4><p>Musicista e compositore, chitarrista degli 883; ha collaborato con Battiato e Nannini.</p><span>Asolo</span></div>
-        <div class="aa-person"><h4>Diego Frigoli</h4><p>Psichiatra, fondatore del modello ecobiopsicologico, direttore dell&rsquo;Istituto ANEB.</p><span>Asolo &middot; Perugia</span></div>
-        <div class="aa-person"><h4>Franco Radicchia</h4><p>Direttore del coro Armoniosoincanto, canto medievale e gregoriano.</p><span>Perugia</span></div>
-        <div class="aa-person"><h4>Alessandro Sieni</h4><p>Naturopata e kinesiologo, ideatore della &ldquo;Kinesiologia dell&rsquo;Inconscio&rdquo;.</p><span>Asolo</span></div>
-        <div class="aa-person"><h4>Carlo Ventura</h4><p>Medico e biologo molecolare, gi&agrave; professore ordinario all&rsquo;Universit&agrave; di Bologna.</p><span>Perugia</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10. ANEB + PATROCINI -->
-  <section class="aa-sec" aria-label="Collaborazioni">
-    <div class="aa-wrap">
-      <div class="aa-center aa-rv" style="margin-bottom:40px;">
-        <div class="aa-eyebrow">Collaborazioni</div>
-        <h2 class="aa-h2">Insieme a chi <em>condivide la visione</em></h2>
-      </div>
-      <div class="aa-aneb aa-rv">
-        <img src="https://asoloarte.com/wp-content/uploads/2026/01/Progetto-senza-titolo-76-300x300.jpg" alt="Istituto ANEB" loading="lazy">
+        </div>
         <div>
-          <h3 class="aa-h3">Istituto <em>ANEB</em></h3>
-          <p>La Scuola di Specializzazione in Psicoterapia Istituto ANEB di Milano ha oltre trent&rsquo;anni di esperienza
-            nella formazione in psicoterapia a indirizzo ecobiopsicologico. Riconosciuta dal MIUR (2002) e certificata
-            Scuola di Eccellenza dal CNSP, &egrave; il partner scientifico dei nostri incontri.</p>
+          <div class="aa-ev__date">28 febbraio 2026, Asolo</div>
+          <h3>La Ricerca dell&rsquo;Unit&agrave;<small>Il risveglio della coscienza globale</small></h3>
+          <div class="aa-ev__where">Sala Hangar, Fornace di Asolo, nel territorio MAB UNESCO</div>
+          <p>Tavola rotonda con Federico Faggin, Diego Frigoli, Attilio Cavezzi e Alessandro Sieni, moderata da
+            Alessandra Bracci, con l&rsquo;Istituto ANEB. Ospite il musicista Davide Ferrario.</p>
+          <div class="aa-ev__num">
+            <div><b>300</b>posti in sala</div>
+            <div><b>1880</b>anno della Fornace</div>
+          </div>
+          <div class="aa-ev__links">
+            <a class="aa-link" href="https://asoloarte.com/la-ricerca-dellunita/">La giornata</a>
+            <a class="aa-link" href="https://youtu.be/fphK49bFkFQ" target="_blank" rel="noopener">Registrazione completa</a>
+            <a class="aa-link" href="https://asoloarte.com/wp-content/uploads/2026/02/Tavola_rotonda_Asolo_programma_2026.docx_21-2-1.pdf" target="_blank" rel="noopener">Programma (PDF)</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CITAZIONE (locandina del 28/02/2026) -->
+  <section class="aa-quote" aria-label="Citazione">
+    <div class="aa-wrap">
+      <blockquote>&ldquo;La vera innovazione nasce quando scienza e spirito si incontrano.&rdquo;</blockquote>
+      <cite>Federico Faggin, dalla locandina della tavola rotonda di Asolo</cite>
+    </div>
+  </section>
+
+  <!-- RELATORI (ordine alfabetico, tutti alla pari) -->
+  <section class="aa-sec aa-people-sec" aria-label="Relatori">
+    <div class="aa-wrap">
+      <div class="aa-label">Relatori</div>
+      <h2 class="aa-h2">Chi ha parlato ai nostri incontri</h2>
+      <p>Discipline diverse, una domanda comune: che cos&rsquo;&egrave; la coscienza, e come cambia il modo di curare, studiare, vivere.</p>
+      <div class="aa-people">
+        <div class="aa-p"><img src="https://asoloarte.com/wp-content/uploads/2025/08/federico-faggin-1.jpg" alt="Alessandra Bracci" loading="lazy">
+          <h4>Alessandra Bracci</h4><p>Responsabile area editoriale ANEB, caporedattrice di <em>Materia Prima</em>. Moderatrice.</p><span>Asolo &middot; Perugia</span></div>
+        <div class="aa-p"><img src="https://asoloarte.com/wp-content/uploads/2025/08/federico-faggin-3.jpg" alt="Attilio Cavezzi" loading="lazy">
+          <h4>Attilio Cavezzi</h4><p>Chirurgo vascolare; studi su flebologia, linfologia e medicina della longevit&agrave;.</p><span>Asolo</span></div>
+        <div class="aa-p"><img src="https://asoloarte.com/wp-content/uploads/2025/08/federico-faggin-2.jpg" alt="Federico Faggin" loading="lazy">
+          <h4>Federico Faggin</h4><p>Fisico e inventore del microprocessore Intel 4004. Dal 1990 studia la coscienza.</p><span>Asolo &middot; Perugia</span></div>
+        <div class="aa-p"><img src="https://asoloarte.com/wp-content/uploads/2025/08/federico-faggin.jpg" alt="Diego Frigoli" loading="lazy">
+          <h4>Diego Frigoli</h4><p>Psichiatra, fondatore del modello ecobiopsicologico, direttore dell&rsquo;Istituto ANEB.</p><span>Asolo &middot; Perugia</span></div>
+        <div class="aa-p"><img src="https://asoloarte.com/wp-content/uploads/2025/08/federico-faggin-2-1.jpg" alt="Alessandro Sieni" loading="lazy">
+          <h4>Alessandro Sieni</h4><p>Naturopata e kinesiologo, ideatore della &ldquo;Kinesiologia dell&rsquo;Inconscio&rdquo;.</p><span>Asolo</span></div>
+        <div class="aa-p"><img src="https://asoloarte.com/wp-content/uploads/2026/05/federico-faggin.jpg" alt="Carlo Ventura" loading="lazy">
+          <h4>Carlo Ventura</h4><p>Medico e biologo molecolare, gi&agrave; professore ordinario all&rsquo;Universit&agrave; di Bologna.</p><span>Perugia</span></div>
+      </div>
+      <div class="aa-guests">
+        <div><b>Paolo Belardi</b>Professore di Composizione Architettonica a Perugia: ha raccontato l&rsquo;Auditorium San Francesco al Prato.</div>
+        <div><b>Davide Ferrario</b>Musicista e compositore, chitarrista degli 883: ospite ad Asolo.</div>
+        <div><b>Franco Radicchia</b>Ha diretto il coro Armoniosoincanto nel concerto di apertura a Perugia.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATROCINI E PARTNER (Asolo + Perugia, senza doppioni) -->
+  <section class="aa-sec aa-logos-sec" aria-label="Patrocini e partner">
+    <div class="aa-wrap">
+      <div class="aa-label">Con il sostegno di</div>
+      <h2 class="aa-h2">Patrocini e partner</h2>
+      <p>Enti, istituzioni e realt&agrave; che hanno sostenuto gli incontri di Asolo e Perugia.</p>
+
+      <div class="aa-lg">
+        <h3>Patrocini istituzionali e scientifici</h3>
+        <div class="aa-logos">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/06/LogoSanFra-IsaManucci-scaled.png" alt="Comitato Nazionale San Francesco 1226-2026" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/06/ChatGPT-Image-24-giu-2026-16_27_40.png" alt="Regione Umbria" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2025/12/Progetto-senza-titolo-72-300x300.jpg" alt="Regione del Veneto" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2025/09/Progetto-senza-titolo-87-300x300.png" alt="Provincia di Treviso" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/07/Progetto-senza-titolo-2026-07-03T151809.549.png" alt="Comune di Perugia" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/06/ChatGPT-Image-24-giu-2026-16_43_10.png" alt="Citta' di Assisi" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2025/09/Progetto-senza-titolo-58-300x300.jpg" alt="Citta' di Asolo" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/07/Event-Banner-Highlighting-Radiant-Title-with-Cosmic-Theme-3.png" alt="Universita' degli Studi di Perugia" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2025/09/Progetto-senza-titolo-60-300x300.jpg" alt="Alumni" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/07/Event-Banner-Highlighting-Radiant-Title-with-Cosmic-Theme.jpg" alt="Pavia University Press" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2025/11/Progetto-senza-titolo-66-300x300.jpg" alt="SIM Societa' Italiana di Medicina" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2025/09/Progetto-senza-titolo-59-300x300.jpg" alt="Ente patrocinante" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/10/Confindustria_Umbria_trasparente.png" alt="Confindustria Umbria" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/01/Progetto-senza-titolo-78-300x300.jpg" alt="Ascom Confcommercio" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/01/Progetto-senza-titolo-79-300x300.jpg" alt="Confartigianato Asolo Montebelluna" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/01/Progetto-senza-titolo-80-300x300.jpg" alt="CNA" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/11/logo-p49.png" alt="P49, patrocinio culturale" loading="lazy">
         </div>
       </div>
-      <div class="aa-logos aa-rv">
-        <img src="https://asoloarte.com/wp-content/uploads/2025/09/Progetto-senza-titolo-58-300x300.jpg" alt="Ente patrocinante" loading="lazy">
-        <img src="https://asoloarte.com/wp-content/uploads/2025/09/Progetto-senza-titolo-87-300x300.png" alt="Ente patrocinante" loading="lazy">
-        <img src="https://asoloarte.com/wp-content/uploads/2025/12/Progetto-senza-titolo-72-300x300.jpg" alt="Ente patrocinante" loading="lazy">
-        <img src="https://asoloarte.com/wp-content/uploads/2025/09/Progetto-senza-titolo-59-300x300.jpg" alt="Ente patrocinante" loading="lazy">
-        <img src="https://asoloarte.com/wp-content/uploads/2026/01/Progetto-senza-titolo-79-300x300.jpg" alt="Confartigianato Asolo Montebelluna" loading="lazy">
-        <img src="https://asoloarte.com/wp-content/uploads/2026/01/Progetto-senza-titolo-78-300x300.jpg" alt="Ascom Confcommercio" loading="lazy">
-        <img src="https://asoloarte.com/wp-content/uploads/2026/01/Progetto-senza-titolo-80-300x300.jpg" alt="Ente patrocinante" loading="lazy">
-        <img src="https://asoloarte.com/wp-content/uploads/2025/09/Progetto-senza-titolo-60-300x300.jpg" alt="Ente scientifico patrocinatore" loading="lazy">
-        <img src="https://asoloarte.com/wp-content/uploads/2025/11/Progetto-senza-titolo-66-300x300.jpg" alt="Ente scientifico patrocinatore" loading="lazy">
+
+      <div class="aa-lg">
+        <h3>Partner culturali e sponsor</h3>
+        <div class="aa-logos">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/01/Progetto-senza-titolo-76-300x300.jpg" alt="Istituto ANEB" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/06/ChatGPT-Image-24-giu-2026-16_42_12.png" alt="Knights of Saint Francis" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/06/Progetto-senza-titolo-2026-06-25T170115.659-5.png" alt="Lions Club Perugia Maesta' delle Volte" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/07/Progetto-senza-titolo-2026-07-06T095915.282.png" alt="Alchimie Venete" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/07/Progetto-senza-titolo-2026-07-06T095208.612.png" alt="Ubik" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/11/logo-archivio-mani-maestre.png" alt="L'Archivio delle Mani Maestre" loading="lazy">
+          <img src="https://asoloarte.com/wp-content/uploads/2026/09/Asolo-arte.jpg" alt="Fabbrika Kreativa, sponsor tecnico" loading="lazy">
+        </div>
       </div>
-      <p class="aa-logos-cap">Enti patrocinanti della tavola rotonda di Asolo, 28 febbraio 2026.</p>
     </div>
   </section>
 
-  <!-- 11. AVVISAMI -->
-  <section class="aa-sec aa-next aa-center" id="aa-avvisami" aria-label="Prossimo evento">
-    <div class="aa-wrap aa-rv">
-      <div class="aa-eyebrow">Il prossimo evento</div>
-      <h2 class="aa-h2">Stiamo preparando <em>il prossimo incontro</em></h2>
-      <p>Lascia il tuo nome: ti scriviamo quando data e luogo sono decisi, prima dell&rsquo;apertura dei biglietti.</p>
-      <ul>
-        <li>Data e luogo in anteprima</li>
-        <li>Relatori e programma</li>
-        <li>Come partecipare in sala o in streaming</li>
-      </ul>
-      <a class="aa-btn aa-btn--gold" href="mailto:elisacannelli2@gmail.com?subject=Avvisami%20del%20prossimo%20evento%20Asolo%20Arte&amp;body=Buongiorno%2C%20desidero%20essere%20avvisato%20dei%20prossimi%20eventi%20di%20Asolo%20Arte.%0D%0A%0D%0ANome%20e%20cognome%3A%20%0D%0ACitt%C3%A0%3A%20%0D%0A">Avvisami del prossimo evento</a>
-      <small>Si apre un&rsquo;email gi&agrave; pronta: basta aggiungere nome e citt&agrave; e inviarla.
-        Oppure scrivi a elisacannelli2@gmail.com</small>
+  <!-- AVVISAMI -->
+  <section class="aa-sec aa-next" id="aa-avvisami" aria-label="Prossimo incontro">
+    <div class="aa-wrap aa-next__in">
+      <div>
+        <div class="aa-label">Il prossimo incontro</div>
+        <h2 class="aa-h2">Data e luogo non sono ancora decisi.</h2>
+        <p>Chi lascia il nome lo sa per primo: ti scriviamo quando il programma &egrave; pronto, prima che aprano i biglietti.</p>
+      </div>
+      <div class="aa-next__box">
+        <a class="aa-btn aa-btn--gold" href="mailto:elisacannelli2@gmail.com?subject=Avvisami%20del%20prossimo%20evento%20Asolo%20Arte&amp;body=Buongiorno%2C%20desidero%20essere%20avvisato%20dei%20prossimi%20eventi%20di%20Asolo%20Arte.%0D%0A%0D%0ANome%20e%20cognome%3A%20%0D%0ACitt%C3%A0%3A%20%0D%0A">Avvisami del prossimo incontro</a>
+        <small>Si apre un&rsquo;email gi&agrave; scritta: aggiungi nome e citt&agrave; e inviala.
+          Oppure scrivi a elisacannelli2@gmail.com</small>
+      </div>
     </div>
   </section>
 
@@ -490,10 +377,7 @@
 
 <script>
 (function(){
-  var root=document.querySelector('.aa-home'); if(!root||!('IntersectionObserver' in window)) return;
-  root.classList.add('aa-js');
-  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{rootMargin:'0px 0px -8% 0px'});
-  root.querySelectorAll('.aa-rv').forEach(function(el){ io.observe(el); });
+  var root=document.querySelector('.aa-home'); if(!root) return;
   root.querySelectorAll('a[href^="#aa-"]').forEach(function(a){ a.addEventListener('click',function(ev){
     var t=document.getElementById(a.getAttribute('href').slice(1)); if(t){ ev.preventDefault(); t.scrollIntoView({behavior:'smooth'}); } }); });
 })();
